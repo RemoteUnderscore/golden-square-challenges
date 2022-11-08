@@ -1,20 +1,20 @@
 require 'report_length'
 
 RSpec.describe "report_length method" do
-  it "checks the string length if 10" do
-    result = report_length(10)
-    expect(result).to eq "This string was 10 characters long."
+  it "checks the string length if 'Mike'" do
+    result = report_length("Mike")
+    expect(result).to eq "This string was 4 characters long."
   end
-  it "checks the string length if 0" do
-    result = report_length(0)
+  it "checks the string length if 'Testing 1-2-3" do
+    result = report_length("Testing 1-2-3")
+    expect(result).to eq "This string was 13 characters long."
+  end
+  it "checks the string length if ''" do
+    result = report_length("")
     expect(result).to eq "This string was 0 characters long."
   end
-  it "checks the string length if 999" do
-    result = report_length(999)
-    expect(result).to eq "This string was 999 characters long."
-  end
-  it "checks the string length if 1001" do
-    result = report_length(1001)
-    expect(result).to eq "This string was 1001 characters long."
+  it "checks the string length if 'supercalifragilistic" do
+    result = report_length("supercalifragilistic")
+    expect(result).to eq "This string was 20 characters long."
   end
 end
